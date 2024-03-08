@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información sobre el deporte</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='informacion.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Información sobre el deporte Fútbol</h1>
+        <p>El fútbol es un deporte de equipo ampliamente practicado y seguido en todo el mundo.</p>
+        <p>Por ejemplo:</p>
+        <ul>
+            <li><strong>Historia del deporte:</strong> El fútbol moderno se originó en Inglaterra en el siglo XIX, y desde entonces se ha convertido en el deporte más popular del mundo.</li>
+            <li><strong>Reglas y normativas:</strong> El fútbol se juega entre dos equipos de once jugadores cada uno, con el objetivo de marcar más goles que el equipo rival.</li>
+            <li><strong>Equipamiento necesario:</strong> Los jugadores de fútbol necesitan un conjunto de uniforme que incluye camiseta, pantalones cortos, medias, calzado deportivo apropiado y espinilleras para protección.</li>
+            <li><strong>Beneficios para la salud:</strong> El fútbol es una excelente forma de ejercicio cardiovascular que ayuda a mejorar la salud del corazón, la resistencia, la fuerza muscular y la coordinación.</li>
+        </ul>
+    </div>
+    <form action="{{ url_for('logout') }}" method="post"> 
+        <button type="submit">Cerrar Sesión</button>
+    </form>
+</body>
+</html>

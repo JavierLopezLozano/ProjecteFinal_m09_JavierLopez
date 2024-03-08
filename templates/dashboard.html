@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Deportes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="content">
+        {% if 'username' in session %}
+            <h1>Bienvenido, {{ session['username'] }}</h1>
+        {% else %}
+            <h1>Error: No se ha iniciado sesión</h1>
+            <p>Por favor, inicie sesión para acceder a esta página.</p>
+            <a href="{{ url_for('login') }}">Iniciar sesión</a> <!-- Corregido: href="login" -->
+        {% endif %}
+        <h1>Formulario de futbol</h1>
+        <form action="{{ url_for('dashboard') }}" method="post">
+            <div class="form-group">
+                <label for="sport">¿Cuál es tu equipo favorito de España?:</label>
+                <select id="sport" name="sport">
+                    <option value="Barça">Barça</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Betis">Betis</option>
+                    <option value="Sevilla">Sevilla</option>
+                    <option value="Valencia">Valencia</option>
+                    <option value="Atletico de Madrid">Atletico de Madrid</option>
+                    <option value="Almeria">Almeria</option>
+                    <option value="Osasuna">Osasuna</option>
+                    <option value="Bilbao">Bilbao</option>
+                    <option value="Alaves">Alaves</option>
+                    <option value="Granada">Granada</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="reason">¿Por qué te gusta este equipo?</label>
+                <textarea id="reason" name="reason" rows="4" cols="50"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="practice">¿Practicas este deporte?</label>
+                <input type="checkbox" id="practice" name="practice" value="yes">
+                <label for="practice">Sí</label>
+                <label for="practice">No</label>
+                <input type="checkbox" id="practice" name="practice" value="yes">
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+        <form action="{{ url_for('logout') }}" method="post">
+            
+            <button type="submit">Cerrar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>

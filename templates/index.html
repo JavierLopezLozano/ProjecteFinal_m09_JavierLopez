@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tu Aplicación{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='fondo.jpg') }}");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('index') }}">Inicio</a></li>
+            {% if 'username' in session %}
+                <li><a href="{{ url_for('logout') }}">Cerrar sesión</a></li>
+                <li><p>Hola, {{ session['username'] }}</p></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('about_me') }}">About Me</a></li>
+            <li><a href="{{ url_for('register') }}">Regístrate</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content">
+        <div class="welcome-message">
+            <h2>Bienvenido a Tu Aplicación de fútbol</h2>
+            {% if 'username' in session %}
+                <p>¡Hola, {{ session['username'] }}! Bienvenido de nuevo.</p>
+            {% else %}
+                <p>Si deseas obtener información sobre este deporte, por favor, inicia sesión.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

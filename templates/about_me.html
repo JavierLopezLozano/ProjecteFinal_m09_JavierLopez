@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlace a prácticas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='practicas.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Enlace a Par o Impar</h1>
+            <p>Haz clic en el siguiente enlace para visitar la aplicación Par o Impar:</p>
+            <a href="http://127.0.0.1:5000/paroimpar/10">Par o Impar</a>
+        </header>
+
+        <main>
+            <h1>Cumpleaños 100 de {{ nombre }}</h1>
+            <p>¡Feliz cumpleaños! {{ nombre }} cumplirá 100 años en el año {{ año_cumple_100 }}.</p>
+            <a href="http://127.0.0.1:5000/cumple100/<nombre>/<int:edad>">cumpleaños</a>
+        </main>
+    </div>
+</body>
+</html>
+

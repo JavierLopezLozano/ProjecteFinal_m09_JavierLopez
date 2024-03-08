@@ -1,0 +1,50 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    text-align: center;
+    color: #FF5733;
+    margin-bottom: 20px;
+}
+
+.container p {
+    margin-bottom: 15px;
+}
+
+.container ul {
+    margin-bottom: 15px;
+}
+
+.container ul li {
+    margin-bottom: 5px;
+}
+
+
+.container strong {
+    color: #007bff; 
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
